@@ -6,4 +6,4 @@ def uppercase(str):
         else:
             alph = chr(ord(alph))
         print("{:s}".format(alph), end="")
-    print("\n")
+    print()
