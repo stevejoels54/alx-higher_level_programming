@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 def print_matrix_integer(matrix=[[]]):
+    if not matrix:
+        print()
+        return
     for row in matrix:
         for col in range(len(row)):
             if col != len(row) - 1:
