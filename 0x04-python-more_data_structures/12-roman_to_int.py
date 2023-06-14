@@ -11,8 +11,8 @@ def roman_to_int(roman_string):
     prev_value = 0
 
     for i in range(len(roman_string) - 1, -1, -1):
-        char = roman_string[i]
-        value = roman_number[char]
+        numeral = roman_string[i]
+        value = roman_number[numeral]
         if value >= prev_value:
             total += value
         else:
