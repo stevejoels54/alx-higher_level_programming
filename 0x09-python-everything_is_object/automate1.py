@@ -3,7 +3,7 @@ import os
 
 def generate_answer_files(answers):
     for i in range(0, 29):
-        with open(f"{i}-answer.txt", "w") as f:
+        with open(f"{i}-answer.txt", "w", encoding="utf-8") as f:
             f.write(answers[i])
 
 def generate_other_files():
