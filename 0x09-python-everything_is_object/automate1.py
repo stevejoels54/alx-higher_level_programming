@@ -4,7 +4,7 @@ import os
 def generate_answer_files(answers):
     for i in range(0, 29):
         with open(f"{i}-answer.txt", "w", encoding="utf-8") as f:
-            f.write(answers[i])
+            f.write(answers[i] + "\n")
 
 def generate_other_files():
     with open("100-magic_string.py", "w") as f:
