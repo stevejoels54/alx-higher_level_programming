@@ -1,8 +1,11 @@
+#!/usr/bin/python3
+"""Defines a locked class."""
+
+
 class LockedClass:
-	def __init__(self):
-		self.locked = True
-	def __setattr__(self, key, value):
-		if key == 'locked':
-			raise AttributeError('locked is a read-only attribute')
-		else:
-			super().__setattr__(key, value)
+    """
+    prevents dynamically creating new instance attributes
+    except if the new instance attribute is called first_name.
+    """
+
+    __slots__ = ["first_name"]
