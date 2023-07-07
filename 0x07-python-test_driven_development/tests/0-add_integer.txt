@@ -24,16 +24,16 @@ Now use it:
     ...     add_integer(4, "School")
     ... except TypeError as err:
     ...     str(err)
-    'b must be an integer or float'
+    'b must be an integer'
 
     >>> try:
     ...     add_integer(1, "2")
     ... except TypeError as err:
     ...     str(err)
-    'b must be an integer or float'
+    'b must be an integer'
 
     >>> try:
     ...     add_integer(None)
     ... except TypeError as err:
     ...     str(err)
-    'a must be an integer or float'
+    'a must be an integer'
