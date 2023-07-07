@@ -1,6 +1,33 @@
-"""
-  Tests that add_integer correctly adds two positive integers.
+===========================
+Using 0-add_integer.py
+===========================
 
-  >>> add_integer(1, 2)
-  3
-"""
+Module defines an integer addition function `add_integer(a, b=98)`.
+
+Usage
+=====
+
+add_integer = __import__('0-add_integer').add_integer
+
+# Test cases for addition with integers
+assert add_integer(2, 3) == 5
+assert add_integer(2, -3) == -1
+
+# Test cases for addition with floating-point values
+assert add_integer(2.0, 3.0) == 5
+assert add_integer(2.9, 0.2) == 2
+assert add_integer(-2.9, -0.2) == -2
+assert add_integer(2.3, -3) == -1
+
+# Test cases for default argument and type checking
+assert add_integer(2) == 100
+assert add_integer("hello", 3)  # TypeError: a must be an integer
+assert add_integer(2, "hello")  # TypeError: b must be an integer
+assert add_integer(None)  # TypeError: a must be an integer
+assert add_integer(2.3, None)  # TypeError: b must be an integer
+
+# Test cases for infinity and NaN values
+assert add_integer(float('inf'))  # OverflowError: cannot convert float infinity to integer
+assert add_integer(2, float('inf'))  # OverflowError: cannot convert float infinity to integer
+assert add_integer(float('nan'))  # ValueError: cannot convert float NaN to integer
+assert add_integer(2, float('nan'))  # ValueError: cannot convert float NaN to integer
