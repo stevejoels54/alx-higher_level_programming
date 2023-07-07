@@ -1,0 +1,36 @@
+The ``text_indentation`` function
+=================================
+
+First import
+``text_indentation`` from the ``5-text_indentation`` module:
+
+    >>> from ..5-text_indentation import text_indentation
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+How to use it:
+
+    >>> text_indentation("Hello. How are you? I am fine.")
+    Hello
+    How are you
+    I am fine
+
+    >>> text_indentation("Hello: How are you? I am fine.")
+    Hello
+    How are you
+    I am fine
+
+    >>> text_indentation("Hello? How are you? I am fine.")
+    Hello
+    How are you
+    I am fine
+
+    >>> text_indentation("This is a test")
+    This is a test
+
+    >>> text_indentation("")
+    (no output, as the input is an empty string)
+
+    >>> text_indentation(123)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
