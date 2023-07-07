@@ -1,33 +1,33 @@
-===========================
-Using 0-add_integer.py
-===========================
+The ``add_integer`` function
+============================
 
-Module defines an integer addition function `add_integer(a, b=98)`.
+First import
+``add_integer`` from the ``0-add_integer`` module:
 
-Usage
-=====
+    >>> add_integer = __import__('0-add_integer').add_integer
 
-add_integer = __import__('0-add_integer').add_integer
+Now use it:
 
-# Test cases for addition with integers
-assert add_integer(2, 3) == 5
-assert add_integer(2, -3) == -1
+    >>> add_integer(1, 2)
+    3
 
-# Test cases for addition with floating-point values
-assert add_integer(2.0, 3.0) == 5
-assert add_integer(2.9, 0.2) == 2
-assert add_integer(-2.9, -0.2) == -2
-assert add_integer(2.3, -3) == -1
+    >>> add_integer(100, -2)
+    98
 
-# Test cases for default argument and type checking
-assert add_integer(2) == 100
-assert add_integer("hello", 3)  # TypeError: a must be an integer
-assert add_integer(2, "hello")  # TypeError: b must be an integer
-assert add_integer(None)  # TypeError: a must be an integer
-assert add_integer(2.3, None)  # TypeError: b must be an integer
+    >>> add_integer(2)
+    100
 
-# Test cases for infinity and NaN values
-assert add_integer(float('inf'))  # OverflowError: cannot convert float infinity to integer
-assert add_integer(2, float('inf'))  # OverflowError: cannot convert float infinity to integer
-assert add_integer(float('nan'))  # ValueError: cannot convert float NaN to integer
-assert add_integer(2, float('nan'))  # ValueError: cannot convert float NaN to integer
+    >>> add_integer(100.3, -2)
+    98
+
+    >>> try:
+    ...     add_integer(4, "School")
+    ... except TypeError as err:
+    ...     str(err)
+    'b must be an integer or float'
+
+    >>> try:
+    ...     add_integer(None)
+    ... except TypeError as err:
+    ...     str(err)
+    'a must be an integer or float'
