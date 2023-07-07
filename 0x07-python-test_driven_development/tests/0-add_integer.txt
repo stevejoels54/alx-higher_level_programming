@@ -27,13 +27,27 @@ Now use it:
     'b must be an integer'
 
     >>> try:
-    ...     add_integer(1, "2")
-    ... except TypeError as err:
-    ...     str(err)
-    'b must be an integer'
-
-    >>> try:
     ...     add_integer(None)
     ... except TypeError as err:
     ...     str(err)
     'a must be an integer'
+
+    >>> add_integer(float('inf'), 10)
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
+
+    >>> add_integer(10, float('inf'))
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
+
+    >>> add_integer(float('nan'), 5)
+    Traceback (most recent call last):
+    ...
+    ValueError: cannot convert float NaN to integer
+
+    >>> add_integer(5, float('nan'))
+    Traceback (most recent call last):
+    ...
+    ValueError: cannot convert float NaN to integer
