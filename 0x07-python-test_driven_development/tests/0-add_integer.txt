@@ -27,6 +27,12 @@ Now use it:
     'b must be an integer or float'
 
     >>> try:
+    ...     add_integer(1, "2")
+    ... except TypeError as err:
+    ...     str(err)
+    'b must be an integer or float'
+
+    >>> try:
     ...     add_integer(None)
     ... except TypeError as err:
     ...     str(err)
