@@ -31,4 +31,5 @@ def text_indentation(text):
         lines.append(current_line.strip())
 
     for line in lines:
+        line = line.replace(".", "").replace("?", "").replace(":", "")
         print(line)
