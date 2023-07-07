@@ -4,7 +4,8 @@
 
 def text_indentation(text):
     """
-    Prints a text with 2 new lines after each occurrence of '.', '?', and ':' characters.
+    Prints a text with 2 new lines after each
+    occurrence of '.', '?', and ':' characters.
 
     Args:
         text (str): The input text.
@@ -19,8 +20,6 @@ def text_indentation(text):
     lines = []
     current_line = ""
     punctuation = [".", "?", ":"]
-    
-
     for char in text:
         current_line += char
         if char in punctuation:
