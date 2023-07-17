@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 """Defines base model class"""
 
+
 class Base:
+
     """Represent base model
     Represents base for all other classes
     Attributes:
