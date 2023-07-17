@@ -82,6 +82,7 @@ class Rectangle(Base):
 
         Raises:
             TypeError: If x is not an integer.
+            ValueError: If x is not positive.
         """
         if not isinstance(value, int):
             raise TypeError("x must be an integer")
@@ -103,6 +104,7 @@ class Rectangle(Base):
 
         Raises:
             TypeError: If y is not an integer.
+            ValueError: If y is not positive.
         """
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
