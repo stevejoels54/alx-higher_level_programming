@@ -17,12 +17,19 @@ class Rectangle(Base):
             x (int, optional): x-coordinate rectangle. Defaults to 0.
             y (int, optional): y-coordinate rectangle. Defaults to 0.
             id (int, optional): ID of rectangle. Defaults to None.
+
+        Raises:
+            TypeError: If width or height is not an integer.
+            ValueError: If width or height is not positive.
+            TypeError: If x or y is not an integer.
+            ValueError: If x or y is not positive.
         """
+
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
 
     @property
     def width(self):
