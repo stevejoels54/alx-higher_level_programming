@@ -19,8 +19,8 @@ if __name__ == "__main__":
 
     cities = cursor.fetchall()
 
-    for city in cities:
-        print(city)
+    if cities[0]:
+        print(cities[0])
 
     cursor.close()
     db.close()
