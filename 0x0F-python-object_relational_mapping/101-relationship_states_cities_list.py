@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""Print all City objects from the hbtn_0e_14_usa database"""
+"""
+lists all State objects, and corresponding City objects,
+contained in the database hbtn_0e_101_usa
+"""
 
 import sys
 from sqlalchemy import create_engine
@@ -15,9 +18,11 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    new = State(name="California", cities=[City(name="San Francisco")])
+    states = session.query(State).order_by(State.id).all()
 
-    session.add(new)
-    session.commit()
+    for state in states:
+        print("{}: {}".format(state.id, state.name))
+        for city in state.cities:
+            print("\t{}: {}".format(city.id, city.name))
 
     session.close()
