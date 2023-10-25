@@ -7,6 +7,6 @@ request(url, (error, response, body) => {
     const movies = filmsData.results.filter((film) => {
       return film.characters.includes('https://swapi-api.alx-tools.com/api/people/18/');
     });
-    console.log(movies.length);
+    console.log(movies.length || 0);
   }
 });
